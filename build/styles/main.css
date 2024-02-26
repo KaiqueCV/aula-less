@@ -50,3 +50,16 @@ header .profile-avatar {
   opacity: 0.7;
   margin-bottom: 8px;
 }
+.social-links {
+  display: flex;
+  justify-content: space-between;
+  max-width: 240px;
+  width: 100%;
+  margin: 0 auto;
+}
+.social-links li {
+  list-style: none;
+}
+.social-links li img:hover {
+  transform: scale(1.1);
+}
