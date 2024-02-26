@@ -1,4 +1,5 @@
-@import "variaveis.less";
+@import "mapas.less";
+
 @breakpointMobile: ~"(max-width: 767px)";
 @breakpointTablet: ~"(min-width: 768px) and (max-width: 1023px)";
 
@@ -10,18 +11,26 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
+    font-family: #fontes[fontePrincipal];
 }
 
 body {
-    background-color: @corDeFundo;
-    color: @corDosTextos;
+    background-color: #colors[background-color];
+    color: #colors[textColor];
+}
+
+li {
+    list-style: none;
 }
 
 .container {
     max-width: 960px;
     width: 100%;
     margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     @media @breakpointTablet {
         max-width: 80%;
@@ -33,7 +42,7 @@ body {
 }
 
 header {
-    padding: 24px;
+    padding-bottom: 24px;
 
     .profile-avatar {
         display: block;
@@ -70,11 +79,34 @@ header {
     margin: 0 auto;
     
     li {
-        list-style: none;
-
         img {
+            transition: all ease .3s;
             &:hover {
                 transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.projects-list {
+    margin-top: 32px;
+    &-item {
+        a {
+            text-decoration: none;
+            background-color: #colors[buttonColor];
+            display: block;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+            text-align: center;
+            color: #colors[textColor];
+            font-weight: bold;
+            border-radius: 30px;
+            border: 2px solid #colors[buttonColor];
+            transition: all ease .5s;
+
+            &:hover {
+                color: #colors[buttonColor];
+                background-color: transparent;
             }
         }
     }
